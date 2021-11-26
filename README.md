@@ -2,7 +2,7 @@
 [![CocoaPods Compatible](https://img.shields.io/badge/pod-v1.10.1-blue.svg)](https://github.com/YingYou/YieldzoneAd-iOS-Pod-Demo)
 [![Platform](https://img.shields.io/badge/platform-iOS%209%2B-brightgreen.svg?style=flat)](https://github.com/YingYou/YieldzoneAd-iOS-Pod-Demo)
 
-A short description of SparkXAd SDK for iOS
+A short description of YieldzoneAd SDK for iOS
 
 
 ## Communication
@@ -23,8 +23,8 @@ To integrate SparkXAdSDK into your Xcode project using CocoaPods, specify it in 
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 
-target 'SparkXAdDemo' do
-      pod 'SparkXAdSDK','sdk_version'
+target 'YieldzoneAdDemo' do
+      pod 'YieldzoneAd','3.1.0'
 end
 ```
 
@@ -38,7 +38,7 @@ $ pod install
 ## Requirements
 
 - iOS 9.0 and up
-- Xcode 9.3 and up
+- Xcode 12.0 and up
 
 ## Integration instructions
 empty
