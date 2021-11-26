@@ -6,7 +6,7 @@ A short description of YieldzoneAd SDK for iOS
 
 
 ## Communication
-empty
+yieldzone sdk version 3.1.0
 
 ### Installation with CocoaPods
 
