@@ -1,0 +1,6 @@
+framework module YieldzoneAdSDK {
+  umbrella header "YieldzoneAdSDK.h"
+
+  export *
+  module * { export * }
+}

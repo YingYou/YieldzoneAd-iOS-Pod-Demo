@@ -1,0 +1,151 @@
+//
+//  SplashAdViewController.m
+//  YieldzoneAdDemo
+//
+//  Created by Wei yang on 2021/2/2.
+//  Copyright © 2021 Yieldzone. All rights reserved.
+//
+
+#import "SplashAdViewController.h"
+#import <YieldzoneAdSDK/YieldzoneAdSplashAd.h>
+#import "AppDelegate.h"
+#import "Utils.h"
+@interface SplashAdViewController ()<YieldzoneAdSplashAdDelegate>
+@property (nonatomic, strong) UILabel *statusLabel;
+
+@property (nonatomic ,strong) YieldzoneAdSplashAd * splashAd;
+
+@end
+
+@implementation SplashAdViewController
+
+///demo测试数据
+#pragma mark ---广告资源切换
+
+- (void)adMediaCheck:(id)sender {
+    [self showSplashAlert];
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    _statusLabel = [[UILabel alloc]init];
+    [_statusLabel setFont:[UIFont systemFontOfSize:16]];
+    [_statusLabel setTextColor:[UIColor redColor]];
+    [_statusLabel setTextAlignment:NSTextAlignmentCenter];
+    _statusLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    _statusLabel.text = @"Tap button to load and show Ad";
+    [self.view addSubview:_statusLabel];
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_statusLabel]-20-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_statusLabel)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-35-[_statusLabel(25)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_statusLabel)]];
+    
+    
+    UIButton *loadsplashAd = [UIButton buttonWithType:UIButtonTypeSystem];
+    loadsplashAd.layer.borderWidth = 0.5;
+    loadsplashAd.layer.cornerRadius = 8;
+    loadsplashAd.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    loadsplashAd.translatesAutoresizingMaskIntoConstraints = NO;
+    [loadsplashAd addTarget:self action:@selector(loadsplashAd:) forControlEvents:UIControlEventTouchUpInside];
+    [loadsplashAd setTitle:@"Load SplashAd" forState:UIControlStateNormal];
+    [loadsplashAd setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.view addSubview:loadsplashAd];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-30-[loadsplashAd]-170-|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:NSDictionaryOfVariableBindings(loadsplashAd)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_statusLabel]-20-[loadsplashAd(40)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_statusLabel,loadsplashAd)]];
+
+}
+///@"ca-app-pub-3940256099942544/5662855259"
+- (void)loadsplashAd:(id)sender {
+    
+    AppDelegate *appdelegate = (AppDelegate  *)[UIApplication sharedApplication].delegate;
+    
+    self.splashAd = [[YieldzoneAdSplashAd alloc]initWithPlacementId:test_splash_pid];
+    self.splashAd.delegate = self;
+    [self.splashAd showAdFromRootViewController:appdelegate.window.rootViewController withBottomView:nil];
+    
+    self.statusLabel.text = @"Loading......";
+}
+
+#pragma mark----YieldzoneAdSplashAdDelegate
+
+/**
+ *
+ */
+- (void)splashAdSuccessPresentScreen:(YieldzoneAdSplashAd *)splashAd {
+    NSLog(@"%s", __FUNCTION__);
+   
+}
+
+/**
+ *
+ */
+- (void)splashAdDidLoad:(YieldzoneAdSplashAd *)splashAd {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+/**
+ *
+ */
+- (void)splashAdFailToPresent:(YieldzoneAdSplashAd *)splashAd withError:(NSError *)error{
+    NSLog(@"%s", __FUNCTION__);
+    self.statusLabel.text = @"ad error";
+}
+
+/**
+ *
+ */
+- (void)splashAdExposured:(YieldzoneAdSplashAd *)splashAd {
+    NSLog(@"%s", __FUNCTION__);
+    self.statusLabel.text = @"ad exposured";
+}
+
+/**
+ *
+ */
+- (void)splashAdClicked:(YieldzoneAdSplashAd *)splashAd {
+    NSLog(@"%s", __FUNCTION__);
+    self.statusLabel.text = @"ad click";
+}
+
+/**
+ *
+ */
+- (void)splashAdClosed:(YieldzoneAdSplashAd *)splashAd {
+    NSLog(@"%s", __FUNCTION__);
+    self.statusLabel.text = @"ad close";
+}
+
+
+/**
+ *
+ */
+- (void)splashAdDidPresentFullScreenModal:(YieldzoneAdSplashAd *)splashAd {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+
+/**
+ *  
+ */
+- (void)splashAdDidDismissFullScreenModal {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end
