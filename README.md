@@ -1,6 +1,6 @@
-# SparkXAd-iOS-Pod-Demo
-[![CocoaPods Compatible](https://img.shields.io/badge/pod-v1.10.1-blue.svg)](https://github.com/YingYou/SparkXAd-iOS-Pod-Demo)
-[![Platform](https://img.shields.io/badge/platform-iOS%209%2B-brightgreen.svg?style=flat)](https://github.com/YingYou/SparkXAd-iOS-Pod-Demo)
+# YieldzoneAd-iOS-Pod-Demo
+[![CocoaPods Compatible](https://img.shields.io/badge/pod-v1.10.1-blue.svg)](https://github.com/YingYou/YieldzoneAd-iOS-Pod-Demo)
+[![Platform](https://img.shields.io/badge/platform-iOS%209%2B-brightgreen.svg?style=flat)](https://github.com/YingYou/YieldzoneAd-iOS-Pod-Demo)
 
 A short description of SparkXAd SDK for iOS
 
