@@ -17,7 +17,7 @@ $ gem install cocoapods
 ```
 
 **Podfile**
-To integrate SparkXAdSDK into your Xcode project using CocoaPods, specify it in your Podfile:
+To integrate YieldzoneAd into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
 source 'https://github.com/CocoaPods/Specs.git'
