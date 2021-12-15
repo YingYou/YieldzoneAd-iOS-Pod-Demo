@@ -10,14 +10,14 @@ yieldzone sdk version 3.1.0
 
 ### Installation with CocoaPods
 
-[CocoaPods](https://cocoapods.org/) is a dependency manager for Swift and Objective-C Cocoa projects, which automates and simplifies the process of using 3rd-party libraries like the SparkXAdSDK in your projects. You can install it with the following command:
+[CocoaPods](https://cocoapods.org/) is a dependency manager for Swift and Objective-C Cocoa projects, which automates and simplifies the process of using 3rd-party libraries like the YieldzoneAdSDK in your projects. You can install it with the following command:
 
 ```
 $ gem install cocoapods
 ```
 
 **Podfile**
-To integrate YieldzoneAd into your Xcode project using CocoaPods, specify it in your Podfile:
+To integrate YieldzoneAdSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
 source 'https://github.com/CocoaPods/Specs.git'
